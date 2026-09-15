@@ -136,6 +136,9 @@ more details later:
 ### ADRs
 [Overall deployment topology](./adr/ADR-007-deployment-topology.md)
 
+[Data Ownership](./adr/ADR-016-data-ownership.md)
+
+
 [Role and scope for the mobile app](./adr/ADR-005-mobile-app-scope.md)
 
 [Customer Facing SaaS platform choice](./adr/ADR-001-customer-facing-platform.md)
@@ -145,7 +148,6 @@ more details later:
 [Integration style between cloud and on-premises](./adr/ADR-003-integration-style.md)
 
 [customer Master Identity](./adr/ADR-004-master-identity.md)
-
 
 [Chat Service Placement](./adr/ADR-006-chat-service-placement.md)
 
@@ -165,7 +167,11 @@ more details later:
 
 [After visit experience](./adr/ADR-013-after-visit-experience.md)
 
+[Cloud & On-Prem Connectivity and Security](./adr/ADR-016-data-ownership.md)
 
+[Degraded Mode when Internet Connection Down](./adr/ADR-018-degraded-mode-behaviour.md)
+
+[Tool Design Principles](./adr/ADR-019-chatbot-tool-design.md)
 
 
 
