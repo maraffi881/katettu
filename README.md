@@ -493,7 +493,7 @@ needs to be optimized both for memory and for bandwidth. AI recommends:
 single RTX 4090 24 GB workstation or small server (\~\$2,500--4,500
 total build). Or M5 Pro Mac mini with 48 GB or 64 GB. Unified memort
 with bandwidth (\~307 GB/s). With 1Tb in Finland, 3159,- euro.\
-More detailed planning can be done based on Ahmad Osman's postings:
+More detailed planning can be done based on Ahmad Osman's postings (or blindly trusting AI answers as we did above:
 <https://x.com/TheAhmadOsman/status/2057183854444843202>
 
 ## Customer SaaS
@@ -874,8 +874,6 @@ Types of AI use cases identified include at least:
 | Aquarium/fish tank | Water temp&level, pH, oxygen, turbidity (cloudiness), air and water pump usage, feeding, ambient temp | “Oxygen low, pump activity abnormal =\> anomaly” |
 | Plants | Soil moisture, humidity, temp, light, watering, CO2, species, historical growth, image analysis of leaves (yellow etc..) | “Humidity pattern for this plant differs significantly from its normal growth period” |
 
-
-*Anomaly detection examples.*
 
 Building models for time series forecasting is a bit different. Earlier
 data points are independent and identically distributed, allowing for
