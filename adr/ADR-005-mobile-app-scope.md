@@ -4,7 +4,9 @@
 
 ## Context
 
-Visitors need a rich experience while they are inside the park: live guidance, real-time information next to attractions, an AI chatbot, gamification, notifications and the ability to save memories. Alternatives considered:
+Visitors need a rich experience while they are inside the park: live guidance, real-time information next to attractions, an AI chatbot, gamification, notifications and the ability to save memories. 
+
+Alternatives considered:
 
 1. Rely primarily on the SaaS vendor’s white-label or web app.
 2. Build a full custom app that also owns the complete commerce and booking flow.
