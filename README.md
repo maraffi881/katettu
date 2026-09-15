@@ -15,7 +15,9 @@ capability to track what attractions draw crowds and ability to monitor
 animal and plant wellbeing.
 
 A modern architecture utilizing also AI is thought to bring digital
-salvation to the damsel in distress. We are on the job.
+salvation to the damsel in distress. 
+
+We are on the job.
 
 
 ## Team
