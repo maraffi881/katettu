@@ -366,7 +366,7 @@ A minimal production setup recommended is:
 
 In more details implementation will:
 
-- Λογ εϖερψτηινγ αλονγ τηε πατη (υser message, guardrails results,
+- Log everything along the path (υser message, guardrails results,
   intent chosen by router and confidence score, full prompt go the LLM,
   LLM response and LLM used (in case of fall back), final answer
   returned after last guardrail (it might mask some text), latency along
