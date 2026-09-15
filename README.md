@@ -894,9 +894,8 @@ gone a bit ballistic at some point. If there is need to keep budget in
 ship shape, our recommendation is to first build the customer facing
 part with minimal additional components -- just the queueu tracking
 cameras. This is the functionality that brings in money and only when
-the good times start rolling with money incoming more than one dares to
-mention, it is time to invest into second phase and build the IoT
-platform to upkeep the system and minimize service interruptions, reduce
-costs and prevent bad social media posts.
+the good times start rolling, it is time to invest into second phase and build the IoT
+platform fully to upkeep the system and minimize service interruptions, reduce
+costs and improve customer experience.
 
 And that's all Folks!
