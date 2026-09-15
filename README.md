@@ -40,7 +40,7 @@ capture, analysis, insights and action.
 
 As a mind-map VonDigitals Digital Enterprise (VODDE) becomes:
 
-![](./media/image1.png)
+![VODDE mindmap](./media/image1.png)
 
 Fear not, we cover only on high-level and skip less important aspects.\
 Caveat Emptor: lightweight use of AI in getting ideas for use cases and
