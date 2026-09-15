@@ -45,7 +45,8 @@ As a mind-map Von Digitals Digital Enterprise (VODDE) becomes:
 
 ![VODDE mindmap](./images/image1.png)
 
-Fear not, we cover only on high-level and skip less important aspects.\
+Fear not, we cover only on high-level and skip less important aspects.
+
 Caveat Emptor: lightweight use of AI in getting ideas for use cases and
 functionalities for different parts + what to sensor has been used. The
 ask was really to focus on AI but in our experience it is suboptimal
