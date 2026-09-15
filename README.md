@@ -134,7 +134,28 @@ more details later:
 
 ## Key ADRs
 ### ADRs
+[Overall deployment topology](./adr/ADR-007-deployment-topology.md)
+[Role and scope for the mobile app](./adr/ADR-005-mobile-app-scope.md)
 [Customer Facing SaaS platform choice](./adr/ADR-001-customer-facing-platform.md)
+[Asset Management Platform placement](./adr/ADR-002-asset-iot-backend-placement.md)
+[Integration style between cloud and on-premises](./adr/ADR-003-integration-style.md)
+[customer Master Identity](./adr/ADR-004-master-identity.md)
+
+
+[Chat Service Placement](./adr/ADR-006-chat-service-placement.md)
+[Chat Service Control Flow](./adr/ADR-015-chatbot-control-flow.md)
+[Intent Routing approach](./adr/ADR-008-intent-routing-approach.md)
+[Context for Chat Service](./adr/ADR-009-context-provisioning.md)
+[Guardrails strategy](./adr/ADR-010-guardrails-strategy.md)
+[LLM hosting preference](./adr/ADR-011-llm-hosting-preference.md)
+[Chat Service Runtime](./adr/ADR-012-chat-service-runtime.md)
+[Chat Service Observability](./adr/ADR-014-genai-observability.md)
+[After visit experience](./adr/ADR-013-after-visit-experience.md)
+
+
+
+
+
 ## Integration protocols
 
 The integration protocols between different parts is a mixture of REST
