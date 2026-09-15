@@ -23,7 +23,7 @@ Pure REST creates tight coupling and can suffer under load or partial failures. 
 
 Adopt a hybrid API-led + event-driven integration pattern:
 
-- Synchronous REST or GraphQL for on-demand queries and commands.
+- Synchronous REST for on-demand queries and commands.
 - Signed webhooks and an internal event backbone for state-change notifications.
 - Prefer outbound connections originating from the on-premises side where possible.
 - Use versioned contracts (OpenAPI / AsyncAPI) and CloudEvents where appropriate.
@@ -39,3 +39,4 @@ Adopt a hybrid API-led + event-driven integration pattern:
 - More moving parts (webhooks, event bus, contract versioning, idempotency).
 - Requires disciplined API and event design.
 - Debugging distributed flows is more complex than a single monolithic call stack.
+- We do not control the APIs available on the Customer SaaS
