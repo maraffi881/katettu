@@ -181,7 +181,7 @@ part, but in general approach would be as follows:
 | SaaS → Backend (itinerary created/updated, booking) | Webhooks (event) | Most vertical SaaS platforms already expose webhooks for order/ticket lifecycle events. |
 | Backend → SaaS (maintenance time, capacity change, closure, queue wait update) | Event publish / REST |  |
 | Sensor events (queue lengths, animal activity, plant data) | LoRa and MQTT |  |
-| Chatbot / enriched itinerary context | Synchronous API call via Experience API | Mobile app calls exposure service, which enriches SaaS data with on-premises state and formulates response. |
+| User -> Chatbot / enriched itinerary context | Synchronous API call via Experience API | Mobile app calls exposure service, which enriches SaaS data with on-premises state and formulates response. |
 | Bulk / less urgent sync (daily reports, historical) | Scheduled batch |  |
 
 
