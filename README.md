@@ -437,7 +437,7 @@ example Mistral, or Scaleway Managed Inference.
 | **Option** | **Pros** | **Cons** | **Best** |
 | **On-premises** | Maximum availability (works if internet is down), full data control, lowest latency for simple queries, no per-token cost | CAPEX, ops burden, required VRAM, bandwidth (unified memory) and GPU capacity to support parallel sessions | Strict data sovereignty |
 | **EU-hosted (Mistral, Scaleway)** | Excellent GDPR posture, no US Cloud Act exposure, managed scaling, fast iteration on models, lower ops overhead | Still depends on network, some residual logging/retention policies to check in the DPA | Most realistic starting point |
-
+*Selection criteria between on-premises and cloud*
 
 Recommendation to run both the chat service and the LLM on Scaleway on
 the cloud setup. The chat service to be run as serverless containers
