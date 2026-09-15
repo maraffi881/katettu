@@ -147,31 +147,6 @@ part, but in general approach would be as follows:
 | Bulk / less urgent sync (daily reports, historical) | Scheduled batch |  |
 
 
-  -------------------------- --------------- --------------------------------
-   **Direction / Use Case**  **Mechanism**   **Notes**
-
-  SaaS → Backend (itinerary  Webhooks        Most vertical SaaS platforms
-  created/updated, booking)  (event)         already expose webhooks for
-                                             order/ticket lifecycle events.
-
-        Backend → SaaS       Event publish / 
-      (maintenance time,     REST            
-  capacity change, closure,                  
-      queue wait update)                     
-
-     Sensor events (queue    LoRa and MQTT   
-  lengths, animal activity,                  
-         plant data)                         
-
-      Chatbot / enriched     Synchronous API Mobile app calls exposure
-      itinerary context      call via        service, which enriches SaaS
-                             Experience API  data with on-premises state and
-                                             formulates response.
-
-   Bulk / less urgent sync   Scheduled batch 
-       (daily reports,                       
-         historical)                         
-  -------------------------- --------------- --------------------------------
 
 Next we'll cover the componens in more detail.
 
@@ -426,30 +401,20 @@ In more details implementation will:
   kafka). Analyse bad reviews every now and then for wrong intent, bad
   tool results, outdated knowledge, prompt drift etc.
 
-  ------------------------ ----------------------------------------------
-         **Signal**        **What it tells you**
-
-    **Guardrail trigger    Sudden rise often means the model or prompts
-           rate**          started producing unsafe/off-topic answers
-
-   **Fallback / "I don't   Model is becoming less confident or tools are
-        know" rate**       failing
-
-    **Tool-call success    Backend or SaaS integration problems
-           rate**          
-
-  **Latency (p50 / p95)**  Performance degradation
-
-     **User feedback**     Direct signal of quality
-
-       **Conversation      Users abandon the chat
-         drop-off**        
-
-    **Intent confidence    Router starting to misclassify
-       distribution**      
-  ------------------------ ----------------------------------------------
+  |  |  |
+|:--:|----|
+| **Signal** | **What it tells you** |
+| **Guardrail trigger rate** | Sudden rise often means the model or prompts started producing unsafe/off-topic answers |
+| **Fallback / “I don’t know” rate** | Model is becoming less confident or tools are failing |
+| **Tool-call success rate** | Backend or SaaS integration problems |
+| **Latency (p50 / p95)** | Performance degradation |
+| **User feedback** | Direct signal of quality |
+| **Conversation drop-off** | Users abandon the chat |
+| **Intent confidence distribution** | Router starting to misclassify |
 
 *Suggested indicators for quality drift*
+
+ 
 
 ## EU-hosted Chatbot and LLM Deployment 
 
@@ -472,23 +437,12 @@ Commercial options have lower CAPEX and we recommend to start with it
 and with EU based option to limit risk. EU-hosted options are for
 example Mistral, or Scaleway Managed Inference.
 
-  ----------------- ------------------------- ------------------- ---------------
-     **Option**     **Pros**                  **Cons**            **Best**
+|  |  |  |  |
+|:--:|----|----|----|
+| **Option** | **Pros** | **Cons** | **Best** |
+| **On-premises** | Maximum availability (works if internet is down), full data control, lowest latency for simple queries, no per-token cost | CAPEX, ops burden, required VRAM, bandwidth (unified memory) and GPU capacity to support parallel sessions | Strict data sovereignty |
+| **EU-hosted (Mistral, Scaleway)** | Excellent GDPR posture, no US Cloud Act exposure, managed scaling, fast iteration on models, lower ops overhead | Still depends on network, some residual logging/retention policies to check in the DPA | Most realistic starting point |
 
-   **On-premises**  Maximum availability      CAPEX, ops burden,  Strict data
-                    (works if internet is     required VRAM,      sovereignty
-                    down), full data control, bandwidth (unified  
-                    lowest latency for simple memory) and GPU     
-                    queries, no per-token     capacity to support 
-                    cost                      parallel sessions   
-
-     **EU-hosted    Excellent GDPR posture,   Still depends on    Most realistic
-      (Mistral,     no US Cloud Act exposure, network, some       starting point
-     Scaleway)**    managed scaling, fast     residual            
-                    iteration on models,      logging/retention   
-                    lower ops overhead        policies to check   
-                                              in the DPA          
-  ----------------- ------------------------- ------------------- ---------------
 
 Recommendation to run both the chat service and the LLM on Scaleway on
 the cloud setup. The chat service to be run as serverless containers
@@ -759,81 +713,34 @@ cumulative data, relevant near-term history data, backend admin AAA etc.
 Below a summary of assets and sensor for data collection and finally
 applications to keep the park running
 
-  -----------------------------------------------------------------------
-  Asset                   Data/sensor             Applications
-  ----------------------- ----------------------- -----------------------
-  Rides                   Vibration, energy,      Ride vibration or
-                          start & stop time,      temperature anomaly,
-                          customer counter, ...   emergency condition,
-                                                  predictive maintenance
+| Asset | Data/sensor | Applications |
+|----|----|----|
+| Rides | Vibration, energy, start & stop time, customer counter, … | Ride vibration or temperature anomaly, emergency condition, predictive maintenance |
+| Animals | Location, activity, temp, feed | Inactivity event, feed missing event,… |
+| Fish tank | Water temperature, ph, oxygen, feeding, pumps (water, air),.. | Aquarium oxygen, temp or ph problems, pump problems |
+| Plant enclosure | Soil humidity, watering, lighting, CO<sub>2</sub> | Humidity problems |
+| Pump | Energy, vibration, pumped volume | Pump failure, predictive maintenance |
+| Queue | Length |  |
+| Park gate | Identified visitors in and out |  |
+| Building | Electricity, water metering, temperature … | Long term energy analysis |
+| Per site environmental | Temperature, noise, humidity, … |  |
 
-  Animals                 Location, activity,     Inactivity event, feed
-                          temp, feed              missing event,...
-
-  Fish tank               Water temperature, ph,  Aquarium oxygen, temp
-                          oxygen, feeding, pumps  or ph problems, pump
-                          (water, air),..         problems
-
-  Plant enclosure         Soil humidity,          Humidity problems
-                          watering, lighting,     
-                          CO~2~                   
-
-  Pump                    Energy, vibration,      Pump failure,
-                          pumped volume           predictive maintenance
-
-  Queue                   Length                  
-
-  Park gate               Identified visitors in  
-                          and out                 
-
-  Building                Electricity, water      Long term energy
-                          metering, temperature   analysis
-                          ...                     
-
-  Per site environmental  Temperature, noise,     
-                          humidity, ...           
-  -----------------------------------------------------------------------
 
 ## AI applications
 
 Sensors enable a wide variety of AI applications
 
-  ----------------- --------------- -------------------- --------------------
-    **Use Case**    **Path**        **Type of AI uses**  **Notes**
+|  |  |  |  |
+|:--:|----|----|----|
+| **Use Case** | **Path** | **Type of AI uses** | **Notes** |
+| Equipment anomaly (vibration, temperature, energy) | Direct / Fast | Edge / central server anomaly detection | Safety critical |
+| Predictive maintenance of rides | Fast + Slow | Time-series forecasting, remaining useful life, anomaly detection | Classical ML |
+| Animal welfare (movement, temperature, feeding) | Fast + Slow | Anomaly detection + behaviour models | Combine real-time alerts with longer patterns |
+| Optimal feeding / growth for animals & fish | Slow | Regression / optimisation models |  |
+| Visitor flow & ride popularity | Slow | Forecasting, clustering | Links back to your earlier queue cameras |
+| Plant health / watering optimisation | Slow | Simple models or rules + occasional ML |  |
+| Computer vision (if we add more cameras on animals/plants) | Fast + Slow | Object detection, pose estimation, tracking |  |
 
-  Equipment anomaly Direct / Fast   Edge / central       Safety critical
-     (vibration,                    server anomaly       
-    temperature,                    detection            
-       energy)                                           
-
-     Predictive     Fast + Slow     Time-series          Classical ML
-   maintenance of                   forecasting,         
-        rides                       remaining useful     
-                                    life, anomaly        
-                                    detection            
-
-   Animal welfare   Fast + Slow     Anomaly detection +  Combine real-time
-     (movement,                     behaviour models     alerts with longer
-    temperature,                                         patterns
-      feeding)                                           
-
-  Optimal feeding / Slow            Regression /         
-     growth for                     optimisation models  
-   animals & fish                                        
-
-   Visitor flow &   Slow            Forecasting,         Links back to your
-   ride popularity                  clustering           earlier queue
-                                                         cameras
-
-   Plant health /   Slow            Simple models or     
-      watering                      rules + occasional   
-    optimisation                    ML                   
-
-   Computer vision  Fast + Slow     Object detection,    
-   (if we add more                  pose estimation,     
-     cameras on                     tracking             
-   animals/plants)                                       
-  ----------------- --------------- -------------------- --------------------
 
 ## Edge Anomaly Recovery
 
@@ -927,31 +834,15 @@ local universities and vocational schools. Students can easily be given
 snapshots of data based on their bachelors, masters or some other
 special school project.
 
-Types of AI use cases identied include at least:
+Types of AI use cases identified include at least:
 
-  -------------------------------------------------------------------------
-  Type            Data used                    Example
-  --------------- ---------------------------- ----------------------------
-  Predictive      Vibration, temp, motor       "Smooth sailing next 30
-  maintenance     current, operating hours,    days"
-                  maintenance history          
+| Type | Data used | Example |
+|----|----|----|
+| Predictive maintenance | Vibration, temp, motor current, operating hours, maintenance history | “Smooth sailing next 30 days” |
+| Animal behaviour | Active/sleeping, feeding, temperature, historic behaviour | “No movement for 3h 45m after noon=\> anomaly” |
+| Aquarium/fish tank | Water temp&level, pH, oxygen, turbidity (cloudiness), air and water pump usage, feeding, ambient temp | “Oxygen low, pump activity abnormal =\> anomaly” |
+| Plants | Soil moisture, humidity, temp, light, watering, CO2, species, historical growth, image analysis of leaves (yellow etc..) | “Humidity pattern for this plant differs significantly from its normal growth period” |
 
-  Animal          Active/sleeping, feeding,    "No movement for 3h 45m
-  behaviour       temperature, historic        after noon=\> anomaly"
-                  behaviour                    
-
-  Aquarium/fish   Water temp&level, pH,        "Oxygen low, pump activity
-  tank            oxygen, turbidity            abnormal =\> anomaly"
-                  (cloudiness), air and water  
-                  pump usage, feeding, ambient 
-                  temp                         
-
-  Plants          Soil moisture, humidity,     "Humidity pattern for this
-                  temp, light, watering, CO2,  plant differs significantly
-                  species, historical growth,  from its normal growth
-                  image analysis of leaves     period"
-                  (yellow etc..)               
-  -------------------------------------------------------------------------
 
 *Anomaly detection examples.*
 
