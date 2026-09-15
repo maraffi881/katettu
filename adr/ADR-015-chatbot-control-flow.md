@@ -16,7 +16,7 @@ Adopt a two-path control flow inside the Chat Service:
 2. **Agentic path**  
    Low-confidence or complex queries → LLM is given a set of tool definitions and may call tools in a bounded loop (strict maximum number of rounds) → final answer is generated from the accumulated observations.
 
-Both paths are protected by the input and output guardrails defined in [ADR-010](./adr/ADR-010-guardrails-strategy.md). Rich context (itinerary, zone, etc.) is injected on every request (see  [ADR-009](./adr/ADR-009-context-provisioning.md).
+Both paths are protected by the input and output guardrails defined in [ADR-010](./ADR-010-guardrails-strategy.md). Rich context (itinerary, zone, etc.) is injected on every request (see  [ADR-009](./ADR-009-context-provisioning.md).
 
 ## Consequences
 
