@@ -397,11 +397,10 @@ In more details implementation will:
   kafka). Analyse bad reviews every now and then for wrong intent, bad
   tool results, outdated knowledge, prompt drift etc.
 
-  |  |  |
-|:--:|----|
-| **Signal** | **What it tells you** |
+  | Signal | What it tells you |
+| :--- | :--- |
 | **Guardrail trigger rate** | Sudden rise often means the model or prompts started producing unsafe/off-topic answers |
-| **Fallback / “I don’t know” rate** | Model is becoming less confident or tools are failing |
+| **Fallback / "I don't know" rate** | Model is becoming less confident or tools are failing |
 | **Tool-call success rate** | Backend or SaaS integration problems |
 | **Latency (p50 / p95)** | Performance degradation |
 | **User feedback** | Direct signal of quality |
@@ -409,7 +408,6 @@ In more details implementation will:
 | **Intent confidence distribution** | Router starting to misclassify |
 
 *Suggested indicators for quality drift*
-
  
 
 ## EU-hosted Chatbot and LLM Deployment 
