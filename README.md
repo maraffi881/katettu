@@ -493,7 +493,7 @@ needs to be optimized both for memory and for bandwidth. AI recommends:
 single RTX 4090 24 GB workstation or small server (\~\$2,500--4,500
 total build). Or M5 Pro Mac mini with 48 GB or 64 GB. Unified memort
 with bandwidth (\~307 GB/s). With 1Tb in Finland, 3159,- euro.\
-More detailed planning can be done based on Ahmad Osman's postings (or blindly trusting AI answers as we did above:
+More detailed planning can be done based on Ahmad Osman's postings (rather than blindly trusting AI answers as we did above:
 <https://x.com/TheAhmadOsman/status/2057183854444843202>
 
 ## Customer SaaS
@@ -640,7 +640,7 @@ point =\> wired if become a problem.
 
 ![WiFi network use](./images/image5.png)
 
-### Toilet investor
+### Where to invest
 
 When amount of visitors in a venue starts growing, this is seen also on
 toilet and restaurant queues, causing discomfort that may spill to
