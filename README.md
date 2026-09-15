@@ -51,7 +51,7 @@ Caveat Emptor: lightweight use of AI in getting ideas for use cases and
 functionalities for different parts + what to sensor has been used. The
 ask was really to focus on AI but in our experience it is suboptimal
 (but very popular) to create solutions with wrong or no understanding
-what users need, hence focus also on that.
+what users need, hence focus also on that. More AI was used in generation of ADRs once it was figured what we want.
 
 # High-Level Architecture
 
