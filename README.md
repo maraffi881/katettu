@@ -41,7 +41,7 @@ Visitor facing parts is split into what the customer can do before
 visit, during visit and after it. Asset facing is traditional IoT data
 capture, analysis, insights and action.
 
-As a mind-map VonDigitals Digital Enterprise (VODDE) becomes:
+As a mind-map Von Digitals Digital Enterprise (VODDE) becomes:
 
 ![VODDE mindmap](./images/image1.png)
 
@@ -167,7 +167,7 @@ Next we'll cover the componens in more detail.
 
 
 During visit customers will use their existings iOS and Android phones
-and the VonDigitalis Park App (VODPA). Recommendation is to use
+and the Von Digitalis Park App (VODPA). Recommendation is to use
 cross-platform technology (typescript with Capacitor or React Native or
 Flutter). If up-front cost is key criteria, also no-code tools are
 possible but they run mostly on cloud and are more expensive on the long
