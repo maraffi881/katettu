@@ -29,5 +29,5 @@ The customer-facing SaaS is the master identity provider.
 
 **Negative / Risks**
 - Dependency on the SaaS identity features, token lifetimes and session behaviour.
-- The BFF becomes a critical trust and mapping boundary that must be hardened.
+- The Experience API becomes a critical trust and mapping boundary that must be hardened.
 - If the SaaS identity model is limited, workarounds may be required later.
