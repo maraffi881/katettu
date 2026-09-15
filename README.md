@@ -138,6 +138,7 @@ more details later:
 
 [Data Ownership](./adr/ADR-016-data-ownership.md)
 
+[customer Master Identity](./adr/ADR-004-master-identity.md)
 
 [Role and scope for the mobile app](./adr/ADR-005-mobile-app-scope.md)
 
@@ -147,23 +148,7 @@ more details later:
 
 [Integration style between cloud and on-premises](./adr/ADR-003-integration-style.md)
 
-[customer Master Identity](./adr/ADR-004-master-identity.md)
 
-[Chat Service Placement](./adr/ADR-006-chat-service-placement.md)
-
-[Chat Service Control Flow](./adr/ADR-015-chatbot-control-flow.md)
-
-[Intent Routing approach](./adr/ADR-008-intent-routing-approach.md)
-
-[Context for Chat Service](./adr/ADR-009-context-provisioning.md)
-
-[Guardrails strategy](./adr/ADR-010-guardrails-strategy.md)
-
-[LLM hosting preference](./adr/ADR-011-llm-hosting-preference.md)
-
-[Chat Service Runtime](./adr/ADR-012-chat-service-runtime.md)
-
-[Chat Service Observability](./adr/ADR-014-genai-observability.md)
 
 [After visit experience](./adr/ADR-013-after-visit-experience.md)
 
@@ -273,6 +258,12 @@ the gentle reader to step in with the perfect idea ...
 
 # Chat Service
 
+[Chat Service Control Flow](./adr/ADR-015-chatbot-control-flow.md)
+
+[Chat Service Placement](./adr/ADR-006-chat-service-placement.md)
+
+[Context for Chat Service](./adr/ADR-009-context-provisioning.md)
+
 The Chat Service answers users questions. Process starts when user talks
 or text question to the app and then sends it and with context like user
 identity, itinerary etc to the Chat service. It decides the best way to
@@ -286,6 +277,8 @@ The proposed chat service architecture is below:
 ![Chat Service Architecture](./images/image3.png)
 
 ## Guardrails
+
+[Guardrails strategy](./adr/ADR-010-guardrails-strategy.md)
 
 There are guardrails in the beginning and end of processing but they
 serve different purposes. In the beginning to check if user is trying to
@@ -302,6 +295,8 @@ causing confusion hopefully during development. Recommendation to start
 with Guardrails AI.
 
 ## Intent Routing
+
+[Intent Routing approach](./adr/ADR-008-intent-routing-approach.md)
 
 It is wasteful to ask a LLM for every customer enquiry what tools should
 be called to build the right context. This would cause two LLM calls for
@@ -390,6 +385,8 @@ so you do not need to shop around separately.
 
 ## Observability
 
+[Chat Service Observability](./adr/ADR-014-genai-observability.md)
+
 As noted we will never get 100% deterministic behaviour from GenAI.
 Instead it is a monitored property and not a fail/pass type of binary
 thing.
@@ -453,9 +450,13 @@ In more details implementation will:
 | **Intent confidence distribution** | Router starting to misclassify |
 
 *Suggested indicators for quality drift*
- 
+
 
 ## EU-hosted Chatbot and LLM Deployment 
+
+[LLM hosting preference](./adr/ADR-011-llm-hosting-preference.md)
+
+[Chat Service Runtime](./adr/ADR-012-chat-service-runtime.md)
 
 Logically chatbot is close to Experience API. One can think of deploying
 it either as VM, serverless container or as Kubernetes deployment.
