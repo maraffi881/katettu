@@ -40,7 +40,7 @@ capture, analysis, insights and action.
 
 As a mind-map VonDigitals Digital Enterprise (VODDE) becomes:
 
-![VODDE mindmap](./media/image1.png)
+![VODDE mindmap](./images/image1.png)
 
 Fear not, we cover only on high-level and skip less important aspects.\
 Caveat Emptor: lightweight use of AI in getting ideas for use cases and
@@ -102,8 +102,7 @@ needed. Data to be integrated includes:
 Overall architecture looks like the diagram below and we'll cover it in
 more details later:
 
-![](./media/media/image2.png){width="6.268055555555556in"
-height="3.65in"}
+![](./images/image2.png)
 
 - **Mobile app** is cross-platform self-developed using for example
   typescript and Capacitor. To ensure good customer experience it caches
@@ -255,8 +254,7 @@ communications is via the Experience API.
 
 The proposed chat service architecture is below:
 
-![](./media/media/image3.png){width="5.591463254593176in"
-height="4.481347331583552in"}
+![Chat Service Architecture](./images/image3.png)
 
 ## Guardrails
 
@@ -523,8 +521,7 @@ For the user experience it is imporant to manage the experience before,
 during and after the visit. The functionalities and roles are shown on
 diagram below:
 
-![](./media/media/image4.png){width="6.268055555555556in"
-height="3.902083333333333in"}
+![Customer SaaS functionalities](./images/image4.png)
 
 **Before** trip customer needs to find information attractions, for
 example that the best time to visit the Japanese garden is April to May,
@@ -645,8 +642,7 @@ WiFi is fairly easy for pransters and crowds with WiFi on can unintended
 interference leading to connection issues between camera and access
 point =\> wired if become a problem.
 
-![](./media/media/image5.png){width="4.469512248468941in"
-height="2.490764435695538in"}
+![WiFi network use](./images/image5.png)
 
 ### Toilet investor
 
@@ -693,8 +689,7 @@ authority creation, certificate generation and certificate
 provisioning). We need to also configure our MQTT broker to trust
 certificates signed by our own certificate authority.
 
-![](./media/media/image6.png){width="5.89000656167979in"
-height="0.31192366579177605in"}
+![LoRa network](./images/image6.png)
 
 Potential implementation open-source stacks: ChirpStack v4, The Things
 Stack
@@ -738,19 +733,16 @@ with own small application,
 
 A high-level architecture becomes:
 
-![](./media/media/image7.png){width="6.268055555555556in"
-height="3.8444444444444446in"}
+![Data Processing at VODDE](./images/image7.png)
 
-*Data processing at VODDE*
+
 
 The VODDE backend is the central database manages all the needed data to
 operate the estate as well results from predictions, calculated
 cumulative data, relevant near-term history data, backend admin AAA etc.
 
-![](./media/media/image8.png){width="5.152438757655293in"
-height="2.9455555555555555in"}
+![VODDE IoT backend](./images/image8.png)
 
-*VODDE backend*
 
 ## Assets and Sensors
 
@@ -907,8 +899,7 @@ Validation is a bit more complex than just using validation data, it is
 normally split into $K$ equal-sized subsets used in validation and the
 method is called K-Fold cross-validation.
 
-![](./media/media/image9.png){width="5.412162073490814in"
-height="1.8042541557305336in"}
+![Model Training](./images/image9.png)
 
 A predictive model will predict multiple output (part to fail,
 probability etc.). A realistic output would look like this:
