@@ -132,32 +132,11 @@ more details later:
   view of all assets that have been instrumented with sensors. It is
   self-developed and deployed locally for maximal availability.
 
-## Key ADRs
-### ADRs
 [Overall deployment topology](./adr/ADR-007-deployment-topology.md)
 
 [Data Ownership](./adr/ADR-016-data-ownership.md)
 
-[customer Master Identity](./adr/ADR-004-master-identity.md)
-
-[Role and scope for the mobile app](./adr/ADR-005-mobile-app-scope.md)
-
-[Customer Facing SaaS platform choice](./adr/ADR-001-customer-facing-platform.md)
-
-[Asset Management Platform placement](./adr/ADR-002-asset-iot-backend-placement.md)
-
-[Integration style between cloud and on-premises](./adr/ADR-003-integration-style.md)
-
-
-
-[After visit experience](./adr/ADR-013-after-visit-experience.md)
-
 [Cloud & On-Prem Connectivity and Security](./adr/ADR-016-data-ownership.md)
-
-[Degraded Mode when Internet Connection Down](./adr/ADR-018-degraded-mode-behaviour.md)
-
-[Tool Design Principles](./adr/ADR-019-chatbot-tool-design.md)
-
 
 
 ## Integration protocols
@@ -176,10 +155,14 @@ part, but in general approach would be as follows:
 | Bulk / less urgent sync (daily reports, historical) | Scheduled batch |  |
 
 
+[Integration style between cloud and on-premises](./adr/ADR-003-integration-style.md)
 
 Next we'll cover the componens in more detail.
 
 # Mobile App
+
+[Role and scope for the mobile app](./adr/ADR-005-mobile-app-scope.md)
+
 
 During visit customers will use their existings iOS and Android phones
 and the VonDigitalis Park App (VODPA). Recommendation is to use
@@ -189,6 +172,8 @@ possible but they run mostly on cloud and are more expensive on the long
 run. Recommended: Typescript + Capacitor.
 
 ## App Authentication & Master Identity
+
+[customer Master Identity](./adr/ADR-004-master-identity.md)
 
 The customer-facing SaaS is the primary (master) identity provider for
 guests. It already owns itinerary building, ticket purchases,
@@ -234,6 +219,8 @@ requests to the chatbot and have it read aloud if they want. And
 supringly even available in EU.
 
 ## Data caching at app
+
+[Degraded Mode when Internet Connection Down](./adr/ADR-018-degraded-mode-behaviour.md)
 
 In order to minimize unnecassary traffic and maximize user experience,
 the app will cache static or slow changing data such as basic data about
@@ -297,6 +284,8 @@ with Guardrails AI.
 ## Intent Routing
 
 [Intent Routing approach](./adr/ADR-008-intent-routing-approach.md)
+
+[Tool Design Principles](./adr/ADR-019-chatbot-tool-design.md)
 
 It is wasteful to ask a LLM for every customer enquiry what tools should
 be called to build the right context. This would cause two LLM calls for
@@ -451,7 +440,6 @@ In more details implementation will:
 
 *Suggested indicators for quality drift*
 
-
 ## EU-hosted Chatbot and LLM Deployment 
 
 [LLM hosting preference](./adr/ADR-011-llm-hosting-preference.md)
@@ -509,6 +497,7 @@ More detailed planning can be done based on Ahmad Osman's postings:
 <https://x.com/TheAhmadOsman/status/2057183854444843202>
 
 ## Customer SaaS
+[Customer Facing SaaS platform choice](./adr/ADR-001-customer-facing-platform.md)
 
 As mentioned this system acts as the customer-facing web interface
 through which users discover park attactions, plan visits, book visits
@@ -594,6 +583,9 @@ spent 22 minutes observing our Eurasian otter habitat. Would you like to
 learn what is being done to protect them in the wild?" Then would you
 like to join into effort to help? And getting membership points for
 joining.
+
+[After visit experience](./adr/ADR-013-after-visit-experience.md)
+
 
 # Connectivity
 
@@ -710,6 +702,8 @@ it.
 
 # Park Asset Data
 
+[Asset Management Platform placement](./adr/ADR-002-asset-iot-backend-placement.md)
+
 ## IoT DATA PROCESSING
 
 MQTT messages are received by MQTT broker (Mosquitto etc.) on the local
@@ -739,8 +733,6 @@ with own small application,
 A high-level architecture becomes:
 
 ![Data Processing at VODDE](./images/image7.png)
-
-
 
 The VODDE backend is the central database manages all the needed data to
 operate the estate as well results from predictions, calculated
