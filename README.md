@@ -132,6 +132,9 @@ more details later:
   view of all assets that have been instrumented with sensors. It is
   self-developed and deployed locally for maximal availability.
 
+## Key ADRs
+### ADRs
+[Customer Facing SaaS platform choice](./adr/ADR-001-customer-facing-platform.md)
 ## Integration protocols
 
 The integration protocols between different parts is a mixture of REST
