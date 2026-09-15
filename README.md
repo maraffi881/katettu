@@ -61,7 +61,7 @@ facing parts. For deployment architecture we propose a hybrid approach.
 - Customer-facing commerce and experience layers are well established
   SaaS products and rebuilding all required functionality (payment
   gateway integrations, DDoS protection etc.) would require an
-  investment that is hard to justify.
+  investment that is hard to justify. [Customer Facing SaaS platform choice](./adr/ADR-001-customer-facing-platform.md)
 
   - A quick search reveals several potential candidates (attractions.io
     provides white-label mobile app platform with most features, accesso
@@ -75,7 +75,7 @@ facing parts. For deployment architecture we propose a hybrid approach.
   closer to the facility. Functionality here is mostly for managing slow
   changing asset data on one hand and on the other hand reception of IoT
   sensor data via LoRa network into an IoT measurement database and then
-  building alerts, reports and predictive models based on it.
+  building alerts, reports and predictive models based on it. [Asset Management Platform placement](./adr/ADR-002-asset-iot-backend-placement.md)
 
   - Keeping this closer to the park brings lower latency for real-time
     guidance, resilience if internet drops, data sovereignty (especially
@@ -101,7 +101,7 @@ needed. Data to be integrated includes:
 
 - Shared identity (anonymized where possible) so the app and backend can
   correlate a visitor's plan with real-time conditions without exposing
-  unnecessary PII.
+  unnecessary PII. [customer Master Identity](./adr/ADR-004-master-identity.md)
 
 Overall architecture looks like the diagram below and we'll cover it in
 more details later:
@@ -157,7 +157,6 @@ part, but in general approach would be as follows:
 | User -> Chatbot / enriched itinerary context | Synchronous API call via Experience API | Mobile app calls exposure service, which enriches SaaS data with on-premises state and formulates response. |
 | Bulk / less urgent sync (daily reports, historical) | Scheduled batch |  |
 
-
 [Integration style between cloud and on-premises](./adr/ADR-003-integration-style.md)
 
 Next we'll cover the componens in more detail.
@@ -175,8 +174,6 @@ possible but they run mostly on cloud and are more expensive on the long
 run. Recommended: Typescript + Capacitor.
 
 ## App Authentication & Master Identity
-
-[customer Master Identity](./adr/ADR-004-master-identity.md)
 
 The customer-facing SaaS is the primary (master) identity provider for
 guests. It already owns itinerary building, ticket purchases,
@@ -500,7 +497,6 @@ More detailed planning can be done based on Ahmad Osman's postings:
 <https://x.com/TheAhmadOsman/status/2057183854444843202>
 
 ## Customer SaaS
-[Customer Facing SaaS platform choice](./adr/ADR-001-customer-facing-platform.md)
 
 As mentioned this system acts as the customer-facing web interface
 through which users discover park attactions, plan visits, book visits
@@ -705,7 +701,6 @@ it.
 
 # Park Asset Data
 
-[Asset Management Platform placement](./adr/ADR-002-asset-iot-backend-placement.md)
 
 ## IoT DATA PROCESSING
 
