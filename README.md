@@ -20,6 +20,7 @@ salvation to the damsel in distress. We are on the job.
 
 ## Team
 [Martti Ylikoski](https://www.linkedin.com/in/marttiylikoski/)
+
 [Heikki Almay](https://www.linkedin.com/in/heikki-almay/)
 
 ## Big picture
