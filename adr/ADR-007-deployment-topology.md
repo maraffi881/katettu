@@ -4,13 +4,13 @@
 
 ## Context
 
-The major runtime components are the BFF, the Chat Service, the on-premises Backend and the API Gateway that protects the Backend. We needed a clear decision on where each component runs.
+The major runtime components are the Experience API, the Chat Service, the on-premises Backend and the API Gateway that protects the Backend. We needed a clear decision on where each component runs.
 
 ## Decision
 
 Adopt the following topology:
 
-- **BFF and Chat Service** → Cloud (preferably the same region and cluster for low internal latency).
+- **Experiecne API and Chat Service** → Cloud (preferably the same region and cluster for low internal latency).
 - **Backend and API Gateway** → On-premises (or private cloud next to the park).
 - Connectivity between the two environments via secure private mechanisms (site-to-site VPN, private link, Cloudflare Tunnel, mTLS reverse tunnel, etc.). Prefer outbound connections from on-premises where feasible.
 
