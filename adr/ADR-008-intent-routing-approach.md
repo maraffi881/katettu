@@ -5,6 +5,7 @@
 ## Context
 
 The Chat Service must quickly decide whether a user message can be handled by a simple, deterministic tool path or whether it requires the full agentic LLM + tools loop. 
+
 Alternatives considered:
 
 1. Pure keyword / rule-based matching.
