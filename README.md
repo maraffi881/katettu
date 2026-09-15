@@ -353,14 +353,10 @@ thing.
 A minimal production setup recommended is:
 
 - Structured logging of every interaction.
-
 - Dashboards for: guardrail rate, fallback rate, tool errors, latency,
   thumbs-down rate.
-
 - Alerts on sudden changes in those metrics.
-
 - Weekly sampling + human/LLM-as-judge review of conversations.
-
 - A living "golden set" that you re-evaluate after every major prompt or
   model change
 
