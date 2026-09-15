@@ -4,7 +4,9 @@
 
 ## Context
 
-Guests must have a consistent identity across ticket purchase, the mobile app, the chatbot and any post-visit services. Alternatives considered:
+Guests must have a consistent identity across ticket purchase, the mobile app, the chatbot and any post-visit services. 
+
+Alternatives considered:
 
 1. Build and operate a custom identity service.
 2. Treat the customer SaaS as the master identity provider.
