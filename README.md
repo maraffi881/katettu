@@ -482,19 +482,17 @@ On-premises option calculations would be as follows: 5000-15000 visitors
 with open 12 hours and 5-20% users engaging. Average session 2-5 short
 turns. ("Where is x"). User read replies and type slowly meaning only a
 fraction of active sessions generates work (10:1 ratio common). 5000
-users, max 1000 active daily sessions, and about 5000 turns. Target max
-processing time 10 secs (Stetson figure). Busy hour is 5-10 times more
+users, max 1000 active daily sessions (5000 turns).. Busy hour is 5-10 times more
 than average. 5k users = 5-10 parallel sessions, 15 k users =\> 25-50.
 
 Simple questions do not need complex models. A strong 7--14B (or
-quantized 27--32B) can be starting assumption. Leading to 32-64 Gb RAM,
+quantized 27--32B) to start with. Leading to 32-64 Gb RAM,
 use vLLM (better in parallel processin than Ollama). Selected hardware
-needs to be optimized both for memory and for bandwidth. AI recommends:
+needs to be optimized both for memory and bandwidth. AI recommends:
 single RTX 4090 24 GB workstation or small server (\~\$2,500--4,500
-total build). Or M5 Pro Mac mini with 48 GB or 64 GB. Unified memort
-with bandwidth (\~307 GB/s). With 1Tb in Finland, 3159,- euro.\
-More detailed planning can be done based on Ahmad Osman's postings (rather than blindly trusting AI answers as we did above:
-<https://x.com/TheAhmadOsman/status/2057183854444843202>
+total build). Or M5 Pro Mac mini with 48 GB or 64 GB. Unified memory
+with bandwidth (\~307 GB/s). With 1Tb in Finland, 3159,- euro.
+
 
 ## Customer SaaS
 
